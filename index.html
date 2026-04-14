@@ -434,7 +434,7 @@
     bottom: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
@@ -444,6 +444,10 @@
     text-transform: uppercase;
     animation: fadeIn 1.5s 1.5s ease forwards;
     opacity: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .scroll-hint { display: flex; }
   }
 
   .scroll-arrow {
