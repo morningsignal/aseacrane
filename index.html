@@ -852,6 +852,12 @@
     border-radius: 8px;
     padding: 2rem 2.5rem;
     min-width: 220px;
+    width: 220px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s;
   }
 
@@ -895,30 +901,121 @@
   /* ─── FOOTER ─── */
   footer {
     background: #060f1e;
-    padding: 2rem;
-    text-align: center;
+    border-top: 2px solid rgba(240,165,0,0.18);
+  }
+
+  .footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.8rem 2rem 2.2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .footer-brand .footer-brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    letter-spacing: 0.12em;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-brand .footer-brand-sub {
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .footer-brand .footer-biz {
+    font-size: 0.83rem;
+    color: #7a8fa8;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-biz span {
+    color: #9dafc6;
+    font-weight: 500;
+  }
+
+  .footer-contact-block {
+    display: grid;
+    grid-template-columns: 18px 42px 1fr;
+    align-items: center;
+    row-gap: 0.65rem;
+    column-gap: 0.55rem;
+    padding-top: 0.2rem;
+  }
+
+  .footer-contact-row {
+    display: contents;
+  }
+
+  .footer-contact-row svg {
+    width: 14px; height: 14px;
+    opacity: 0.55;
+    flex-shrink: 0;
+    justify-self: center;
+  }
+
+  .footer-contact-row .fc-label {
+    color: var(--gray-400);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .footer-contact-row .fc-value {
+    font-size: 0.88rem;
+    color: #9dafc6;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-contact-row a.fc-value {
+    color: #9dafc6;
+    text-decoration: none;
+  }
+
+  .footer-contact-row a.fc-value:hover {
+    color: var(--accent);
+  }
+
+  .footer-divider {
+    border: none;
     border-top: 1px solid rgba(255,255,255,0.05);
   }
 
-  .footer-inner {
+  .footer-bottom {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .footer-copy {
-    font-size: 0.72rem;
-    color: var(--gray-600);
-    letter-spacing: 0.05em;
+    font-size: 0.78rem;
+    color: #4a5a72;
+    letter-spacing: 0.04em;
   }
 
-  .footer-right {
-    font-size: 0.72rem;
-    color: var(--gray-600);
+  @media (max-width: 768px) {
+    .footer-main {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding-bottom: 1.5rem;
+    }
+    .footer-contact-block { align-items: flex-start; }
+    .footer-bottom { justify-content: center; text-align: center; }
   }
 
   /* ─── MOBILE MENU ─── */
@@ -1191,7 +1288,6 @@
           </tr>
         </tbody>
       </table>
-
     </div>
   </div>
 </section>
@@ -1321,12 +1417,41 @@
 
 <!-- ─── FOOTER ─── -->
 <footer>
-  <div class="footer-inner">
+  <div class="footer-main">
+
+    <!-- 왼쪽: 브랜드 + 사업자 정보 -->
+    <div class="footer-brand">
+      <div class="footer-brand-name">아세아중기</div>
+      <div class="footer-brand-sub">Asea Heavy Equipment · Crawler Crane Rental</div>
+      <div class="footer-biz">
+        <span>대표</span> 박재율&emsp;<span>사업자등록번호</span> 105-43-66721<br>
+        경기도 고양시 덕양구 삼원로 83 광양프런티어밸리6차 1429호
+      </div>
+    </div>
+
+    <!-- 오른쪽: 연락처 -->
+    <div class="footer-contact-block">
+      <div class="footer-contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.12.96.35 1.9.68 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.56 2.81.68A2 2 0 0122 14.92z"/></svg>
+        <span class="fc-label">TEL</span>
+        <span class="fc-value">031)967-1186</span>
+      </div>
+      <div class="footer-contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span class="fc-label">FAX</span>
+        <span class="fc-value">031)968-1186</span>
+      </div>
+      <div class="footer-contact-row">
+        <svg style="margin-top:0.3rem;" viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span id="footer-email" class="fc-value" style="grid-column: 2 / -1; margin-top: 0.3rem; transform: translateY(-0.7mm);"></span>
+      </div>
+    </div>
+
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
     <div class="footer-copy">© 2025 아세아중기. All rights reserved.</div>
-    <div class="footer-copy">TEL: 031)967-1186 · FAX: 031)968-1186</div>
-    <div class="footer-copy"><span id="footer-email" style="color:var(--gray-600);"></span></div>
-    <div class="footer-copy">경기도 고양시 덕양구 삼원로 83 광양프런티어밸리6차 1429호</div>
-    <div class="footer-copy">대표 박재율 · 사업자등록번호 105-43-66721</div>
+    <div class="footer-copy">크롤러 크레인 전문 임대 · Sheet Pile · H-BEAM · 항타 및 인발</div>
   </div>
 </footer>
 
