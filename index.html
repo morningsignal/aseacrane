@@ -255,7 +255,7 @@
   @media (max-width: 900px) {
     .hero-content {
       grid-template-columns: 1fr;
-      padding-top: 4rem;
+      padding-top: 6.5rem;
       padding-bottom: 6rem;
     }
     .hero-right { display: none; }
@@ -328,8 +328,10 @@
     content: '▸';
     position: absolute;
     left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--accent);
-    font-size: 0.7rem;
+    font-size: 1.05rem;
   }
 
   .hero-slogan {
@@ -360,6 +362,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    align-items: center;
   }
 
   .stat-num {
@@ -951,23 +954,31 @@
   }
 
   .footer-contact-block {
-    display: grid;
-    grid-template-columns: 18px 42px 1fr;
-    align-items: center;
-    row-gap: 0.65rem;
-    column-gap: 0.55rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
     padding-top: 0.2rem;
   }
 
   .footer-contact-row {
-    display: contents;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .footer-contact-row .fc-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
   .footer-contact-row svg {
     width: 14px; height: 14px;
     opacity: 0.55;
-    flex-shrink: 0;
-    justify-self: center;
+    display: block;
   }
 
   .footer-contact-row .fc-label {
@@ -976,12 +987,18 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-weight: 600;
+    width: 36px;
+    flex-shrink: 0;
+    line-height: 1;
+    transform: translateY(-1px);
   }
 
   .footer-contact-row .fc-value {
     font-size: 0.88rem;
     color: #9dafc6;
     letter-spacing: 0.02em;
+    line-height: 1;
+    transform: translateY(-1px);
   }
 
   .footer-contact-row a.fc-value {
@@ -1382,7 +1399,7 @@
   <div class="contact-inner">
     <div class="section-title">CONTACT</div>
     <div class="section-title-ko" style="color:var(--white);">임대 문의</div>
-    <p class="section-desc" style="color:var(--gray-400);">크레인 임대 관련 문의는 언제든지 연락 주십시오.<br>빠르고 정확하게 답변 드리겠습니다.</p>
+    <p class="section-desc" style="color:var(--gray-400);"><span style="white-space:nowrap;">크레인 임대 관련 문의는 언제든지 연락 주십시오.</span><br>빠르고 정확하게 답변 드리겠습니다.</p>
 
     <div class="contact-cards">
       <div class="contact-card">
@@ -1427,18 +1444,18 @@
     <!-- 오른쪽: 연락처 -->
     <div class="footer-contact-block">
       <div class="footer-contact-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.12.96.35 1.9.68 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.56 2.81.68A2 2 0 0122 14.92z"/></svg>
+        <span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.12.96.35 1.9.68 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.56 2.81.68A2 2 0 0122 14.92z"/></svg></span>
         <span class="fc-label">TEL</span>
         <span class="fc-value">031)967-1186</span>
       </div>
       <div class="footer-contact-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
         <span class="fc-label">FAX</span>
         <span class="fc-value">031)968-1186</span>
       </div>
       <div class="footer-contact-row">
-        <svg style="margin-top:0.3rem;" viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span id="footer-email" class="fc-value" style="grid-column: 2 / -1; margin-top: 0.3rem; transform: translateY(-0.7mm);"></span>
+        <span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+        <span id="footer-email" class="fc-value" style="transform: translateY(-2px);"></span>
       </div>
     </div>
 
@@ -1446,7 +1463,6 @@
   <hr class="footer-divider">
   <div class="footer-bottom">
     <div class="footer-copy">© 2025 아세아중기. All rights reserved.</div>
-    <div class="footer-copy">크롤러 크레인 전문 임대 · Sheet Pile · H-BEAM · 항타 및 인발</div>
   </div>
 </footer>
 
